@@ -22,7 +22,9 @@ export function userPrefersDark$(signal?: AbortSignal): Observable<boolean> {
     if (signal) {
       signal.onabort = () => {
         mediaListQuery.removeEventListener("change", emitValue);
-        !subscriber.closed && subscriber.complete();
+        if (!subscriber.closed) {
+          subscriber.complete();
+        }
       };
     }
 
@@ -31,7 +33,9 @@ export function userPrefersDark$(signal?: AbortSignal): Observable<boolean> {
 
     return () => {
       mediaListQuery.removeEventListener("change", emitValue);
-      !subscriber.closed && subscriber.complete();
+      if (!subscriber.closed) {
+        subscriber.complete();
+      }
     };
   });
 }

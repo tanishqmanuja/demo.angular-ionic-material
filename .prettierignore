@@ -3,6 +3,7 @@
 
 # Except
 !.prettierrc
+!eslint.config.js
 !tsconfig.app.json
 !tsconfig.json
 !angular.json
