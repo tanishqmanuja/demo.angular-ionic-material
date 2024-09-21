@@ -1,0 +1,18 @@
+/* Core CSS required for Ionic components to work properly */
+@forward "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@forward "@ionic/angular/css/normalize.css";
+@forward "@ionic/angular/css/structure.css";
+@forward "@ionic/angular/css/typography.css";
+@forward "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@forward "@ionic/angular/css/padding.css";
+@forward "@ionic/angular/css/float-elements.css";
+@forward "@ionic/angular/css/text-alignment.css";
+@forward "@ionic/angular/css/text-transformation.css";
+@forward "@ionic/angular/css/flex-utils.css";
+
+/* Ionic CSS Variables */
+@forward "variables";
