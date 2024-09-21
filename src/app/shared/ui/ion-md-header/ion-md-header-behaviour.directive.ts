@@ -16,7 +16,10 @@ import { rxState } from "@rx-angular/state";
 import { rxEffects } from "@rx-angular/state/effects";
 import { distinctUntilChanged, fromEvent, map, of, switchMap } from "rxjs";
 
-import { IonMdHeadlineComponent } from "./ion-md-headline.component";
+import {
+  IonMdHeadlineComponent,
+  TRANSITION_TIME_MS,
+} from "./ion-md-headline.component";
 
 type Size = "small" | "medium" | "large";
 type State = {
@@ -135,7 +138,7 @@ export class IonMdHeaderBehaviourDirective implements OnInit, OnDestroy {
     this.renderer.setStyle(
       this.titleElRef.nativeElement,
       "transition",
-      "opacity 200ms ease-in-out",
+      `opacity ${TRANSITION_TIME_MS}ms ease-in-out`,
       RendererStyleFlags2.DashCase,
     );
 

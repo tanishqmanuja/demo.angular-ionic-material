@@ -19,6 +19,7 @@ import { getIntersectionRatioY } from "../../utils/intersection";
 import { fromIntersectionObserver } from "../../utils/intersection/observer";
 
 const FALLBACK_HEADER_HEIGHT = 64;
+export const TRANSITION_TIME_MS = 200;
 
 type Size = "small" | "medium" | "large";
 type State = {
@@ -44,7 +45,7 @@ type State = {
   styles: [
     `
       :host {
-        transition: opacity 200ms ease-in-out;
+        transition: opacity ${TRANSITION_TIME_MS}ms ease-in-out;
         will-change: opacity;
       }
       .wrapper {
