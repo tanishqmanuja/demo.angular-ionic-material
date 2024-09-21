@@ -5,7 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +26,9 @@
     "@angular-devkit/build-angular": "^18.2.4",
     "@angular/cli": "^18.2.4",
     "@angular/compiler-cli": "^18.2.0",
-    "typescript": "~5.5.2"
+    "angular-eslint": "18.3.1",
+    "eslint": "^9.9.1",
+    "typescript": "~5.5.2",
+    "typescript-eslint": "8.2.0"
   }
 }
