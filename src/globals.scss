@@ -3,3 +3,7 @@
 @layer frameworks.ionic {
   @import "./styles/ionic";
 }
+
+@layer shared.ui {
+  @import "./app/shared/ui/ion-md-header/ion-md-header-behaviour";
+}

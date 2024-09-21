@@ -1,0 +1,9 @@
+ion-header[md-behaviour] {
+  &[data-scrolled="true"] {
+    background-color: var(--md-sys-color-surface-container);
+
+    ion-toolbar {
+      --background: var(--md-sys-color-surface-container);
+    }
+  }
+}
