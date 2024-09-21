@@ -1,0 +1,22 @@
+{
+  "semi": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "printWidth": 80,
+  "singleQuote": false,
+  "arrowParens": "avoid",
+  "importOrder": [
+    "<BUILTIN_MODULES>",
+    "",
+    "^@angular/(.*)$",
+    "^@ionic/(.*)$",
+    "^@capacitor/(.*)$",
+    "",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^~/(.*)$",
+    "^[./]"
+  ],
+  "importOrderParserPlugins": ["typescript", "decorators"],
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"]
+}

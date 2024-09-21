@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "private": true,
   "dependencies": {
@@ -26,8 +28,10 @@
     "@angular-devkit/build-angular": "^18.2.4",
     "@angular/cli": "^18.2.4",
     "@angular/compiler-cli": "^18.2.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
     "angular-eslint": "18.3.1",
     "eslint": "^9.9.1",
+    "prettier": "^3.3.3",
     "typescript": "~5.5.2",
     "typescript-eslint": "8.2.0"
   }
