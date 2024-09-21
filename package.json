@@ -20,6 +20,7 @@
     "@angular/platform-browser": "^18.2.5",
     "@angular/platform-browser-dynamic": "^18.2.5",
     "@angular/router": "^18.2.5",
+    "@capacitor/app": "^6.0.1",
     "@ionic/angular": "8.3.1",
     "@material/web": "^2.2.0",
     "@rx-angular/state": "^18.0.0",
@@ -33,12 +34,13 @@
     "@angular-devkit/build-angular": "^18.2.5",
     "@angular/cli": "^18.2.5",
     "@angular/compiler-cli": "^18.2.5",
+    "@capacitor/cli": "^6.1.2",
     "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
+    "@ionic/angular-toolkit": "12.1.1",
     "angular-eslint": "18.3.1",
     "eslint": "^9.9.1",
     "prettier": "^3.3.3",
     "typescript": "~5.6.2",
-    "typescript-eslint": "8.2.0",
-    "@ionic/angular-toolkit": "12.1.1"
+    "typescript-eslint": "8.2.0"
   }
 }
