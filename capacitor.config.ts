@@ -4,6 +4,7 @@ const config: CapacitorConfig = {
   appId: 'ng.ionic.material',
   appName: 'Ng IonMat',
   webDir: 'dist/mobile/browser',
+  backgroundColor: '#00000000',
   server: {
     androidScheme: "https",
     cleartext: true
