@@ -1,0 +1,7 @@
+ion-footer {
+  ion-toolbar {
+    &:empty {
+      --min-height: 0px;
+    }
+  }
+}

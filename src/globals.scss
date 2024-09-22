@@ -6,6 +6,10 @@
 
 @layer tokens.material {
   @import "./styles/material/tokens";
+
+  @layer ionic {
+    @import "./styles/material/ionic/compat";
+  }
 }
 
 @layer shared {

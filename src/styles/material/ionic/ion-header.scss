@@ -1,0 +1,42 @@
+ion-header {
+  --border: none;
+
+  ion-toolbar {
+    --min-height: 64px;
+  }
+
+  ion-title {
+    // --color: var(--md-sys-color-on-surface);
+
+    padding-inline: 16px;
+    font: var(--md-sys-typescale-title-large);
+  }
+
+  ion-buttons + ion-title {
+    padding-left: 0;
+  }
+
+  ion-buttons {
+    &[slot="start"] {
+      color: var(--md-sys-color-on-surface);
+    }
+
+    &[slot="end"] {
+      color: var(--md-sys-color-on-surface-variant);
+    }
+  }
+
+  /* Scrolled */
+  // &[data-scrolled="true"] {
+  //   background-color: var(--md-sys-color-surface-container);
+
+  //   ion-toolbar {
+  //     --background: var(--md-sys-color-surface-container);
+  //   }
+  // }
+
+  /* Disable Shadow */
+  &::after {
+    display: none;
+  }
+}
