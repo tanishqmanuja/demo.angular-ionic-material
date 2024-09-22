@@ -1,0 +1,8 @@
+@use "@material/web/tokens";
+@use "@material/web/typography/typeface";
+@use "@material/web/typography/typescale";
+
+:root {
+  @include typeface.theme(tokens.md-ref-typeface-values());
+  @include typescale.theme(tokens.md-sys-typescale-values());
+}

@@ -4,6 +4,28 @@
   @import "./styles/ionic";
 }
 
+@layer tokens.material {
+  @import "./styles/material/tokens";
+}
+
 @layer shared.ui {
   @import "./app/shared/ui/ion-md-header/ion-md-header-behaviour";
+}
+
+:root {
+  --ion-safe-area-top: var(--safe-area-inset-top, 0);
+  --ion-safe-area-bottom: var(--safe-area-inset-bottom, 0);
+
+  --ion-font-family: var(--md-ref-typeface-plain);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+
+  color: var(--md-sys-color-on-background, transparent);
+  background: var(--md-sys-color-background, transparent);
 }
