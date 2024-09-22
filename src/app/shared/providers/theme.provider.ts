@@ -12,7 +12,7 @@ export type ThemeProviderOptions = {
   /**
    * The source color of the theme.
    */
-  color?: string | Promise<string>;
+  color?: string | Promise<string> | false | null;
 };
 
 export function provideTheme(
