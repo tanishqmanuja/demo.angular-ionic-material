@@ -30,6 +30,7 @@
     "@material/web": "^2.2.0",
     "@rx-angular/state": "^18.0.0",
     "@rx-angular/template": "^18.0.2",
+    "@tqman/ionic-color-utilities": "^1.0.3",
     "@tqman/ngx-material": "^1.0.2",
     "material-symbols": "^0.23.0",
     "rxjs": "~7.8.1",
