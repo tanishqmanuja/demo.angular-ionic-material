@@ -1,8 +1,15 @@
+@use "sass:map";
+
 @use "@material/web/tokens";
 @use "@material/web/typography/typeface";
-@use "@material/web/typography/typescale";
+
+@use "@material/web/tokens/v0_192/md-sys-typescale";
 
 :root {
   @include typeface.theme(tokens.md-ref-typeface-values());
-  @include typescale.theme(tokens.md-sys-typescale-values());
+
+  $tokens: md-sys-typescale.values();
+  @each $token, $value in $tokens {
+    --md-sys-typescale-#{$token}: #{$value};
+  }
 }
