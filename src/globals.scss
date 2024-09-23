@@ -1,13 +1,18 @@
 @layer frameworks, tokens;
 
+@layer tokens.material {
+  @import "./styles/material/tokens";
+}
+
 @layer frameworks.ionic {
   @import "./styles/ionic";
 }
 
-@layer tokens.material {
-  @import "./styles/material/tokens";
+@layer frameworks.material {
+  @import "./styles/material";
+  @import "material-symbols";
 
-  @layer ionic {
+  @layer ionic.compat {
     @import "./styles/material/ionic/compat";
   }
 }
@@ -20,6 +25,11 @@
   @layer fonts {
     @import "./styles/fonts";
   }
+}
+
+@layer app {
+  @import "open-props/style";
+  @import "./styles/app";
 }
 
 :root {
