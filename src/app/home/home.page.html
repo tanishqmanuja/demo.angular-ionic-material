@@ -1,10 +1,15 @@
 <ion-header md-behaviour [headlineRef]="headline" size="medium">
   <ion-toolbar>
     <ion-title> Ionic Material </ion-title>
+    <ion-buttons slot="end">
+      <md-icon-button routerLink="/settings">
+        <md-icon filled>settings</md-icon>
+      </md-icon-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding" scroll-styles-provided="true">
+<ion-content class="ion-padding">
   <ion-md-headline #headline> Ionic Material </ion-md-headline>
 
   <p>

@@ -7,9 +7,9 @@ import { IonApp, IonRouterOutlet } from "@ionic/angular/standalone";
   imports: [IonApp, IonRouterOutlet],
   template: `
     <ion-app>
-      <ion-router-outlet />
+      <ion-router-outlet [animated]="false" />
     </ion-app>
   `,
-  styles: [],
+  styles: ``,
 })
 export class AppComponent {}
