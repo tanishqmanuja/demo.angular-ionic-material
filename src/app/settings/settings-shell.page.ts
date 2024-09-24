@@ -22,7 +22,6 @@ import {
   IonContent,
   IonFooter,
   IonHeader,
-  IonRouterOutlet,
   IonTitle,
   IonToolbar,
   Platform,
@@ -51,7 +50,6 @@ const DEFAULT_TITLE = "Settings";
     RouterOutlet,
     IonMdHeadlineComponent,
     IonMdHeaderBehaviourDirective,
-    IonRouterOutlet,
   ],
   template: `
     @let f = fragment();
