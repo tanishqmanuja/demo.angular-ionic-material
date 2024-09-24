@@ -5,7 +5,8 @@ export abstract class SettingsFragment {
     return (
       component !== null &&
       typeof component === "object" &&
-      "title" in component
+      "title" in component &&
+      typeof component.title === "string"
     );
   }
 }
