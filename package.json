@@ -37,6 +37,7 @@
     "@tqman/ionic-color-utilities": "^1.0.3",
     "@tqman/ngx-material": "^1.0.2",
     "material-symbols": "^0.23.0",
+    "ngxtension": "^4.0.0",
     "open-props": "^1.7.6",
     "rxjs": "~7.8.1",
     "tslib": "^2.3.0"
