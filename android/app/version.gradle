@@ -1,0 +1,95 @@
+import groovy.json.JsonSlurper
+
+ext {
+  // Ref: https://gist.github.com/dekalo-stanislav/9ad5f76cc2b49828acbf0634f6586b6c
+
+  /**
+   * Application version is located version variable.
+   * And should follow next policy:
+   * X1.X2.X3-type-flavor, where X - any digits and type is optional alphabetical suffix.
+   * X1 - major version
+   * X2 - minor version
+   * X3 - patch
+   * There are next supported type:
+   *  dev - code 0
+   *  alpha - code 1
+   *  beta - code 2
+   *  no suffix - code 9 - means final production build from market.
+   * flavors currently disabled, value (0)
+   */
+  buildVersionCode = { String versionName ->
+    /**
+     * Here is representation of Version code generation from version name.
+     *
+     *  *--------- major version
+     *  |  *------ minor version
+     *  |  |  *--- patch version
+     *  |  |  |*-- buildType (dev/alpha/beta/rc/release)
+     *  |  |  ||*- flavor - disabled.
+     *  |  |  |||
+     *  X00X00XXX
+     * so
+     *  1.13.20-alpha-v19 = 10130201
+     * see details below:
+     *  *--------- 1 is major version
+     *  |  *------ 13 is minor version
+     *  |  |  *--- 20 is patch version
+     *  |  |  |*-- type 1 is alpha.
+     *  |  |  ||*- flavor 0 (disabled)
+     *  |  |  |||
+     *  101302010
+     */
+
+    def (mainPart, typeName) = versionName.toLowerCase().tokenize('-')
+
+    if (typeName == null) {
+      type = "9"
+    } else if (typeName == "dev") {
+      type = "0"
+    } else if (typeName == "alpha") {
+      type = "1"
+    } else if (typeName == "beta") {
+      type = "2"
+    } else {
+      println("Unknown build type = " + typeName + ". Please look into app/versioning.gradle.")
+      throw new RuntimeException("Unknown type = " + typeName)
+    }
+
+    /**
+     * At the project start time, there was flavor support.
+     * Now we should reserve last digit, because removing it will reduce version code 10 times.
+     * And next version will have versionCode less than previous.
+     */
+    flavor = "0" // disabled
+
+    int flavorDigit = 1
+    int typeDigit = flavorDigit * 10
+    int patchDigit = typeDigit * 10
+    int minorDigit = patchDigit * 1000
+    int majorDigit = minorDigit * 1000
+
+    def (major, minor, patch) = mainPart.tokenize('.')
+    (major, minor, patch, type, flavor) = [major, minor, patch, type, flavor].collect {
+      it.toInteger()
+    }
+    (major * majorDigit) + (minor * minorDigit) + (patch * patchDigit) + (type * typeDigit) + (flavor * flavorDigit)
+  }
+
+  // Ref: https://stackoverflow.com/a/54146923
+
+  getVersionFromNpm = { ->
+    // Read and parse package.json
+    def file = new File("$rootDir/../package.json")
+    def json = new JsonSlurper().parseText(file.text)
+
+    // Return the version property
+    return json["version"]
+  }
+}
+
+android {
+  defaultConfig {
+    versionName getVersionFromNpm()
+    versionCode buildVersionCode(versionName)
+  }
+}
