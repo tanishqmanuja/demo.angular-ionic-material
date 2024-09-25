@@ -4,10 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:android": "bun run scripts/android.ts",
+    "start:android": "bun run scripts/android/start.ts",
     "dev": "ng serve -o",
-    "dev:android": "bun run scripts/android.ts --live",
+    "dev:android": "bun run scripts/android/start.ts --live",
     "build": "ng build",
+    "build:android": "bun run scripts/android/build.ts",
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint",
     "format": "prettier --write .",
