@@ -1,2 +1,6 @@
 @forward "ion-header";
 @forward "ion-footer";
+
+body {
+  --ion-font-family: var(--md-ref-typeface-plain);
+}

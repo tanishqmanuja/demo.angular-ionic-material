@@ -1,0 +1,4 @@
+$material-symbols-font-path: "/assets/fonts/material-symbols/";
+
+@import "material-symbols/core";
+@include material-symbols-font("Material Symbols Outlined");

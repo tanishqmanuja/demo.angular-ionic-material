@@ -3,3 +3,8 @@ md-icon {
     font-variation-settings: "FILL" 1;
   }
 }
+
+body {
+  color: var(--md-sys-color-on-background, transparent);
+  background: var(--md-sys-color-background, transparent);
+}

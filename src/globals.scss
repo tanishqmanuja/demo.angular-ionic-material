@@ -1,4 +1,4 @@
-@layer frameworks, tokens;
+@layer frameworks, tokens, shared, app;
 
 @layer tokens.material {
   @import "./styles/material/tokens";
@@ -16,9 +16,7 @@
   }
 
   @layer fonts {
-    $material-symbols-font-path: "/assets/fonts/material-symbols/";
-    @import "material-symbols/core";
-    @include material-symbols-font("Material Symbols Outlined");
+    @import "./styles/material/symbols";
   }
 }
 
@@ -46,12 +44,6 @@ html,
 body {
   height: 100%;
 }
-
 body {
   margin: 0;
-
-  --ion-font-family: var(--md-ref-typeface-plain);
-
-  color: var(--md-sys-color-on-background, transparent);
-  background: var(--md-sys-color-background, transparent);
 }
