@@ -1,6 +1,6 @@
 # Angular Ionic-Material
 
-This project showcases the ability to create a native looking material design 3 android application using the followng stack:
+This project showcases the ability to create a native looking material design 3 android application using the following stack:
 - [Angular](https://angular.dev/) as Frontend Framework
 - [Ionic](https://ionicframework.com/) as UI Framework
 - [Material Web](https://github.com/material-components/material-web) for Material Design Components
