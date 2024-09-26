@@ -27,6 +27,7 @@
     "@angular/router": "^18.2.5",
     "@capacitor/android": "^6.1.2",
     "@capacitor/app": "^6.0.1",
+    "@capacitor/haptics": "^6.0.1",
     "@capacitor/status-bar": "^6.0.1",
     "@hugotomazi/capacitor-navigation-bar": "^4.0.1",
     "@ionic/angular": "8.3.1",
