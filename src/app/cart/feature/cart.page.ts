@@ -118,6 +118,6 @@ function generateRandomItem(): CartItem {
   return {
     id: nanoid(),
     pid: getRandomProduct().id,
-    quantity: Math.floor(Math.random() * 10),
+    quantity: 1 + Math.floor(Math.random() * 10),
   };
 }
