@@ -8,3 +8,8 @@ This project showcases the ability to create a native looking material design 3 
 
 #### Why not angular material instead of material web?
 Because of this - https://github.com/angular/components/issues/29104
+
+## 🍀 Show your Support
+
+Give a ⭐️ if this project helped you!
+
