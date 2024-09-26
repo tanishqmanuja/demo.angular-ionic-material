@@ -3,7 +3,7 @@ import { Routes } from "@angular/router";
 export const routes: Routes = [
   {
     path: "",
-    loadComponent: () => import("./home/home.page"),
+    loadComponent: () => import("./cart/feature/cart.page"),
   },
   {
     path: "settings",

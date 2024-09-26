@@ -12,13 +12,13 @@ import {
 import { MdIconComponent } from "@tqman/ngx-material/icon";
 import { MdIconButtonComponent } from "@tqman/ngx-material/iconbutton";
 
-import { IonMdHeaderBehaviourDirective } from "../shared/ui/ion-md-header/ion-md-header-behaviour.directive";
-import { IonMdHeadlineComponent } from "../shared/ui/ion-md-header/ion-md-headline.component";
+import { IonMdHeaderBehaviourDirective } from "~/shared/ui/ion-md-header/ion-md-header-behaviour.directive";
+import { IonMdHeadlineComponent } from "~/shared/ui/ion-md-header/ion-md-headline.component";
 
 @Component({
-  selector: "app-home",
+  selector: "app-cart",
   standalone: true,
-  templateUrl: "home.page.html",
+  templateUrl: "cart.page.html",
   styles: `
     ion-header {
       md-icon-button {
