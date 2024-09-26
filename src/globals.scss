@@ -36,8 +36,8 @@
 }
 
 :root {
-  --ion-safe-area-top: var(--safe-area-inset-top, 0);
-  --ion-safe-area-bottom: var(--safe-area-inset-bottom, 0);
+  --ion-safe-area-top: var(--safe-area-inset-top, 0px);
+  --ion-safe-area-bottom: var(--safe-area-inset-bottom, 0px);
 }
 
 html,
