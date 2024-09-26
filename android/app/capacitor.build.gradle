@@ -11,6 +11,7 @@ apply from: "../capacitor-cordova-android-plugins/cordova.variables.gradle"
 dependencies {
     implementation project(':aashu-dubey-capacitor-statusbar-safe-area')
     implementation project(':capacitor-app')
+    implementation project(':capacitor-haptics')
     implementation project(':capacitor-status-bar')
     implementation project(':hugotomazi-capacitor-navigation-bar')
     implementation project(':tqman-capacitor-system-colors')
