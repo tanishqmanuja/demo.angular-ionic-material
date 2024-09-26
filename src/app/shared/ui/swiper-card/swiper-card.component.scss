@@ -1,0 +1,64 @@
+:host {
+  --_icon-color-left: var(--icon-color-left, #c92a2a);
+  --_icon-background-left: var(--icon-background-left, #ff6b6b);
+  --_icon-color-right: var(--icon-color-right, #2b8a3e);
+  --_icon-background-right: var(--icon-background-right, #51cf66);
+
+  --_icon-zoom-scale: var(--icon-zoom-scale, 1.2);
+
+  --_easing-icon-zoom: var(
+    --easing-icon-zoom,
+    cubic-bezier(0.5, 1.75, 0.75, 1.25)
+  );
+  --_easing-card-bounce: var(
+    --easing-card-bounce,
+    cubic-bezier(0.5, -0.5, 0.1, 1.5)
+  );
+
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-auto-rows: 1fr;
+  user-select: none;
+
+  & > * {
+    grid-row: 1/1;
+    grid-column: 1/1;
+  }
+}
+
+.actions {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: var(--padding-inline, 9%);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+
+  color: transparent;
+  background-color: transparent;
+
+  &[data-state="left"] {
+    background-color: var(--_icon-background-left);
+
+    .action-left {
+      color: var(--_icon-color-left);
+    }
+  }
+
+  &[data-state="right"] {
+    background-color: var(--_icon-background-right);
+
+    .action-right {
+      color: var(--_icon-color-right);
+    }
+  }
+
+  &[data-threshold="right"] > .action-right,
+  &[data-threshold="left"] > .action-left {
+    transition: scale 100ms var(--_easing-icon-zoom);
+    scale: var(--_icon-zoom-scale);
+  }
+}
