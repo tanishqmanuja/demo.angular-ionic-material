@@ -76,7 +76,7 @@ export class SwiperCardComponent {
           el: cardEl,
           gestureName: "BIDIRECTIONAL_SWIPE",
           direction: "x",
-          threshold: 10,
+          threshold: 12,
           disableScroll: true,
           onStart: ev => {
             const cardWidth = cardEl.offsetWidth;
