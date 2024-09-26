@@ -1,0 +1,77 @@
+ion-header {
+  md-icon-button {
+    margin-right: 2px;
+  }
+
+  ion-title {
+    font-family: "Nothing";
+  }
+}
+
+ion-content {
+  --padding-start: 12px;
+  --padding-end: 12px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.empty.box {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font: var(--md-sys-typescale-body-large);
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: "Nothing";
+
+  md-icon {
+    --md-icon-size: 54px;
+  }
+}
+
+ion-footer {
+  --ion-toolbar-background: var(--md-sys-color-surface-container);
+
+  ion-toolbar {
+    padding: 12px 16px;
+  }
+
+  md-fab {
+    --md-fab-container-elevation: 0;
+  }
+
+  .box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font: var(--md-sys-typescale-title-large);
+    color: var(--md-sys-color-on-surface-variant);
+
+    .total {
+      font-family: "Nothing";
+      color: var(--md-sys-color-primary);
+
+      &::first-letter {
+        font-size: 0.765em;
+        padding-right: 1ch;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      padding-inline: 14px;
+      gap: 4px;
+    }
+  }
+}

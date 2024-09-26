@@ -1,6 +1,6 @@
-<ion-header md-behaviour [headlineRef]="headline" size="medium">
+<ion-header md-behaviour>
   <ion-toolbar>
-    <ion-title> Ionic Material </ion-title>
+    <ion-title> Material eBill </ion-title>
     <ion-buttons slot="end">
       <md-icon-button routerLink="/settings">
         <md-icon filled>settings</md-icon>
@@ -10,50 +10,46 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-md-headline #headline> Ionic Material </ion-md-headline>
+  @let items = cartService.items();
 
-  <p>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis minus in
-    tempore enim explicabo magnam, itaque aperiam odio, quidem, accusantium
-    saepe atque? Ipsum quisquam molestias blanditiis voluptatem soluta sint
-    pariatur earum. Beatae at natus asperiores facere in repellendus eos
-    assumenda, dolorem consequatur pariatur commodi eius ipsum distinctio illum
-    neque ducimus iure placeat minima quo. Dicta culpa nam dolorem hic inventore
-    corporis, harum consequuntur ipsa soluta architecto saepe rerum commodi
-    error ut non blanditiis rem, at omnis eaque ratione? Obcaecati repellat
-    perferendis veniam ad tempora itaque unde est, excepturi facilis
-    dignissimos, suscipit nobis vitae ex dolor provident eligendi officia
-    molestias. Exercitationem!
-  </p>
-  <p>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis minus in
-    tempore enim explicabo magnam, itaque aperiam odio, quidem, accusantium
-    saepe atque? Ipsum quisquam molestias blanditiis voluptatem soluta sint
-    pariatur earum. Beatae at natus asperiores facere in repellendus eos
-    assumenda, dolorem consequatur pariatur commodi eius ipsum distinctio illum
-    neque ducimus iure placeat minima quo. Dicta culpa nam dolorem hic inventore
-    corporis, harum consequuntur ipsa soluta architecto saepe rerum commodi
-    error ut non blanditiis rem, at omnis eaque ratione? Obcaecati repellat
-    perferendis veniam ad tempora itaque unde est, excepturi facilis
-    dignissimos, suscipit nobis vitae ex dolor provident eligendi officia
-    molestias. Exercitationem!
-  </p>
-  <p>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis minus in
-    tempore enim explicabo magnam, itaque aperiam odio, quidem, accusantium
-    saepe atque? Ipsum quisquam molestias blanditiis voluptatem soluta sint
-    pariatur earum. Beatae at natus asperiores facere in repellendus eos
-    assumenda, dolorem consequatur pariatur commodi eius ipsum distinctio illum
-    neque ducimus iure placeat minima quo. Dicta culpa nam dolorem hic inventore
-    corporis, harum consequuntur ipsa soluta architecto saepe rerum commodi
-    error ut non blanditiis rem, at omnis eaque ratione? Obcaecati repellat
-    perferendis veniam ad tempora itaque unde est, excepturi facilis
-    dignissimos, suscipit nobis vitae ex dolor provident eligendi officia
-    molestias. Exercitationem!
-  </p>
+  <div class="list" [@listAnimation]="items.length">
+    @for (item of items; track item.id) {
+    <app-cart-item
+      [item]="item"
+      (delete)="cartService.removeItem($event)"
+    ></app-cart-item>
+    }
+  </div>
+
+  @if (isEmpty()) {
+  <div class="box empty">
+    <md-icon>shopping_cart</md-icon>
+    <span>Your cart is empty!</span>
+  </div>
+  }
 </ion-content>
 <ion-footer class="ion-no-border">
+  @if (isLoading()) {
+  <md-linear-progress indeterminate></md-linear-progress>
+  }
   <ion-toolbar>
-    <!-- <ion-title></ion-title> -->
+    <div class="box">
+      <span class="total"
+        >{{ cartService.total() | currency: "" : "symbol" : "1.0-2" }}</span
+      >
+
+      <div class="buttons">
+        @let disabled = isEmpty();
+
+        <md-icon-button (click)="cartService.clear()" [disabled]="disabled">
+          <md-icon>delete</md-icon>
+        </md-icon-button>
+      </div>
+    </div>
+    <ion-buttons slot="end">
+      <md-fab variant="primary" (click)="addRandomItem()">
+        <md-icon slot="icon">add</md-icon>
+      </md-fab>
+    </ion-buttons>
   </ion-toolbar>
 </ion-footer>
