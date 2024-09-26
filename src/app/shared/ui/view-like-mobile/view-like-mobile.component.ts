@@ -58,6 +58,7 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
           border-radius: calc(var(--_border-radius) - var(--_padding));
           width: 375px;
           height: 812px;
+          user-select: none;
         }
       }
     }
