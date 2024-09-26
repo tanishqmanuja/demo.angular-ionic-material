@@ -1,5 +1,6 @@
-import { computed, Injectable, signal } from "@angular/core";
+import { computed, Injectable } from "@angular/core";
 
+import { sigstore } from "~/shared/utils/ngxtension/sigstore";
 import { getProduct, Product } from "./products";
 
 export type CartItem = {
@@ -8,9 +9,14 @@ export type CartItem = {
   quantity: number;
 };
 
+const CART_STORAGE_KEY = "material-ebill-cart";
+
 @Injectable({ providedIn: "root" })
 export class CartService {
-  items = signal<CartItem[]>([]);
+  items = sigstore.required<CartItem[]>(CART_STORAGE_KEY, {
+    defaultValue: [],
+  });
+
   total = computed(() => {
     const items = this.items();
     return items.reduce(
