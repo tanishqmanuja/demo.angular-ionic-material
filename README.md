@@ -6,7 +6,7 @@ This project showcases the ability to create a native looking material design 3 
 - [Material Web](https://github.com/material-components/material-web) for Material Design Components
 - [Capacitor](https://capacitorjs.com/) for Native Bindings
 
-#### Why not angular material instead of material web?
+#### Why angular web instead of material material?
 Because of this - https://github.com/angular/components/issues/29104
 
 ## 🍀 Show your Support
