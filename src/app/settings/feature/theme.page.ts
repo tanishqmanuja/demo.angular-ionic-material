@@ -16,15 +16,14 @@ import { ColorScheme } from "~/shared/utils/color-scheme/user-color-scheme";
 import { SettingsFragment } from "../settings.fragment";
 
 @Component({
-  selector: "app-theme",
-  standalone: true,
-  imports: [
-    MdListComponent,
-    MdListItemComponent,
-    MdIconComponent,
-    MdSwitchComponent,
-  ],
-  template: `
+    selector: "app-theme",
+    imports: [
+        MdListComponent,
+        MdListItemComponent,
+        MdIconComponent,
+        MdSwitchComponent,
+    ],
+    template: `
     @let vm = viewmodel();
 
     <md-list>
@@ -53,7 +52,7 @@ import { SettingsFragment } from "../settings.fragment";
       </md-list-item>
     </md-list>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class ThemePage implements SettingsFragment {
   public title = "Theme";

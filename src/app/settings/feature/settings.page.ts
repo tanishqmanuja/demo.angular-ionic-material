@@ -5,10 +5,9 @@ import { MdIconComponent } from "@tqman/ngx-material/icon";
 import { MdListComponent, MdListItemComponent } from "@tqman/ngx-material/list";
 
 @Component({
-  selector: "app-settings",
-  standalone: true,
-  imports: [RouterLink, MdIconComponent, MdListComponent, MdListItemComponent],
-  template: `
+    selector: "app-settings",
+    imports: [RouterLink, MdIconComponent, MdListComponent, MdListItemComponent],
+    template: `
     <md-list>
       <md-list-item routerLink="/settings/theme">
         <md-icon slot="start" filled>palette</md-icon>
@@ -23,7 +22,7 @@ import { MdListComponent, MdListItemComponent } from "@tqman/ngx-material/list";
       </md-list-item>
     </md-list>
   `,
-  styles: ``,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    styles: ``,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class SettingsPage {}

@@ -5,17 +5,16 @@ import { App } from "@capacitor/app";
 import { ViewLikeMobile } from "./shared/ui/view-like-mobile/view-like-mobile.component";
 
 @Component({
-  selector: "app-root",
-  standalone: true,
-  imports: [IonApp, IonRouterOutlet, ViewLikeMobile],
-  template: `
+    selector: "app-root",
+    imports: [IonApp, IonRouterOutlet, ViewLikeMobile],
+    template: `
     <view-like-mobile>
       <ion-app>
         <ion-router-outlet [animated]="false" />
       </ion-app>
     </view-like-mobile>
   `,
-  styles: ``,
+    styles: ``
 })
 export class AppComponent {
   private platform = inject(Platform);

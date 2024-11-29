@@ -36,22 +36,21 @@ import { SettingsFragment } from "./settings.fragment";
 const DEFAULT_TITLE = "Settings";
 
 @Component({
-  selector: "app-settings-shell",
-  standalone: true,
-  imports: [
-    RouterLink,
-    IonHeader,
-    IonContent,
-    IonFooter,
-    IonToolbar,
-    IonTitle,
-    IonButtons,
-    IonBackButton,
-    RouterOutlet,
-    IonMdHeadlineComponent,
-    IonMdHeaderBehaviourDirective,
-  ],
-  template: `
+    selector: "app-settings-shell",
+    imports: [
+        RouterLink,
+        IonHeader,
+        IonContent,
+        IonFooter,
+        IonToolbar,
+        IonTitle,
+        IonButtons,
+        IonBackButton,
+        RouterOutlet,
+        IonMdHeadlineComponent,
+        IonMdHeaderBehaviourDirective,
+    ],
+    template: `
     @let f = fragment();
 
     <ion-header md-behaviour [headlineRef]="headline" size="large">
@@ -83,8 +82,8 @@ const DEFAULT_TITLE = "Settings";
       <ion-toolbar> </ion-toolbar>
     </ion-footer>
   `,
-  styles: ``,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    styles: ``,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class SettingsShellPage implements AfterViewInit {
   private outlet = viewChild.required(RouterOutlet);

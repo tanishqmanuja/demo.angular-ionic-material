@@ -1,9 +1,7 @@
 import {
-  APP_INITIALIZER,
   EnvironmentProviders,
   inject,
-  makeEnvironmentProviders,
-  Provider,
+  provideAppInitializer,
 } from "@angular/core";
 
 import { ThemeService } from "../services/theme.service";
@@ -18,14 +16,9 @@ export type ThemeProviderOptions = {
 export function provideTheme(
   opts: ThemeProviderOptions = {},
 ): EnvironmentProviders {
-  const providers: Provider[] = [];
-
-  providers.push({
-    provide: APP_INITIALIZER,
-    multi: true,
-    useFactory: () => {
+  return provideAppInitializer(() => {
+    const init = ((themeService: ThemeService) => {
       const color = opts.color;
-      const themeService = inject(ThemeService);
 
       if (!color) {
         return () => themeService.init();
@@ -45,8 +38,8 @@ export function provideTheme(
         themeService.sourceColor$.next(color);
         themeService.init();
       };
-    },
-  });
+    })(inject(ThemeService));
 
-  return makeEnvironmentProviders(providers);
+    return init();
+  });
 }

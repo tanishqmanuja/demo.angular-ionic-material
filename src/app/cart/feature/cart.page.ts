@@ -32,14 +32,12 @@ import { MdLinearProgressComponent } from "@tqman/ngx-material/progress";
 import { nanoid } from "nanoid";
 
 import { IonMdHeaderBehaviourDirective } from "~/shared/ui/ion-md-header/ion-md-header-behaviour.directive";
-import { IonMdHeadlineComponent } from "~/shared/ui/ion-md-header/ion-md-headline.component";
 import { CartItem, CartService } from "../data-access/cart.service";
 import { getRandomProduct } from "../data-access/products";
 import { CartItemComponent } from "../ui/cart-item/cart-item.component";
 
 @Component({
   selector: "app-cart",
-  standalone: true,
   templateUrl: "cart.page.html",
   styleUrls: ["cart.page.scss"],
   providers: [{ provide: DEFAULT_CURRENCY_CODE, useValue: "Φ " }],
@@ -56,7 +54,6 @@ import { CartItemComponent } from "../ui/cart-item/cart-item.component";
     MdFabComponent,
     MdIconButtonComponent,
     MdLinearProgressComponent,
-    IonMdHeadlineComponent,
     IonMdHeaderBehaviourDirective,
     CartItemComponent,
   ],

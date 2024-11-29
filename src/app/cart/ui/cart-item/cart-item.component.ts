@@ -17,10 +17,9 @@ import {
 } from "~/shared/ui/swiper-card/swiper-card.component";
 
 @Component({
-  selector: "app-cart-item",
-  standalone: true,
-  imports: [CurrencyPipe, TitleCasePipe, SwiperCardComponent, MdIconComponent],
-  template: `
+    selector: "app-cart-item",
+    imports: [CurrencyPipe, TitleCasePipe, SwiperCardComponent, MdIconComponent],
+    template: `
     <swiper-card (action)="onAction($event)" exitOnLeftSwipe exitOnRightSwipe>
       <md-icon slot="icon-left">delete_forever</md-icon>
       <md-icon slot="icon-right">delete_forever</md-icon>
@@ -56,7 +55,7 @@ import {
       </div>
     </swiper-card>
   `,
-  styles: `
+    styles: `
     swiper-card {
       --border-radius: 12px;
       --icon-zoom-scale: 1.4;
@@ -166,7 +165,7 @@ import {
       }
     }
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CartItemComponent {
   item = input.required<CartItem>();

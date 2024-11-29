@@ -29,11 +29,10 @@ type State = {
 };
 
 @Component({
-  // eslint-disable-next-line @angular-eslint/component-selector
-  selector: "ion-md-headline",
-  standalone: true,
-  imports: [NgClass, RxPush, RxIf],
-  template: `<ng-container *rxIf="isEnabled$; strategy: 'local'">
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: "ion-md-headline",
+    imports: [NgClass, RxPush, RxIf],
+    template: `<ng-container *rxIf="isEnabled$; strategy: 'local'">
     <div
       class="wrapper"
       [ngClass]="[size$ | push: 'local']"
@@ -42,8 +41,8 @@ type State = {
       <span class="title"><ng-content></ng-content></span>
     </div>
   </ng-container>`,
-  styles: [
-    `
+    styles: [
+        `
       :host {
         transition: opacity ${TRANSITION_TIME_MS}ms ease-in-out;
         will-change: opacity;
@@ -81,8 +80,8 @@ type State = {
         -webkit-box-orient: vertical;
       }
     `,
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IonMdHeadlineComponent implements OnInit {
   private readonly elRef = inject(ElementRef);

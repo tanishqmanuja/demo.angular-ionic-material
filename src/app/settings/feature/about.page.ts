@@ -9,10 +9,9 @@ import { environment } from "../../../environments/environment";
 import { SettingsFragment } from "../settings.fragment";
 
 @Component({
-  selector: "app-about",
-  standalone: true,
-  imports: [MdListComponent, MdListItemComponent, MdIconComponent],
-  template: `
+    selector: "app-about",
+    imports: [MdListComponent, MdListItemComponent, MdIconComponent],
+    template: `
     <md-list>
       <md-list-item>
         <md-icon slot="start">family_history</md-icon>
@@ -21,7 +20,7 @@ import { SettingsFragment } from "../settings.fragment";
       </md-list-item>
     </md-list>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class AboutPage implements SettingsFragment {
   public title = "About";
