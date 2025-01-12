@@ -62,6 +62,7 @@ export class ThemeService {
           applyMaterialTokens(scheme);
           applyIonicTokens(scheme);
           applyPlatformStyles(isDark);
+          applyBodyClass(isDark);
         }),
         takeUntilDestroyed(),
       )
@@ -96,4 +97,7 @@ function applyPlatformStyles(isDark: boolean) {
   NavigationBar.getColor().then(({ color }) => {
     NavigationBar.setColor({ color, darkButtons: !isDark });
   });
+}
+function applyBodyClass(isDark: boolean) {
+  document.body.classList.toggle("dark", isDark);
 }

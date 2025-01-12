@@ -17,9 +17,9 @@ import {
 } from "~/shared/ui/swiper-card/swiper-card.component";
 
 @Component({
-    selector: "app-cart-item",
-    imports: [CurrencyPipe, TitleCasePipe, SwiperCardComponent, MdIconComponent],
-    template: `
+  selector: "app-cart-item",
+  imports: [CurrencyPipe, TitleCasePipe, SwiperCardComponent, MdIconComponent],
+  template: `
     <swiper-card (action)="onAction($event)" exitOnLeftSwipe exitOnRightSwipe>
       <md-icon slot="icon-left">delete_forever</md-icon>
       <md-icon slot="icon-right">delete_forever</md-icon>
@@ -55,7 +55,7 @@ import {
       </div>
     </swiper-card>
   `,
-    styles: `
+  styles: `
     swiper-card {
       --border-radius: 12px;
       --icon-zoom-scale: 1.4;
@@ -111,11 +111,17 @@ import {
           padding-block: 6px;
           padding-inline: 10px calc(10px + var(--_extra-padding));
           border-bottom-left-radius: var(--_padding-card);
-          color: var(--md-sys-color--on-tertiary-container);
+          color: var(--md-sys-color-on-tertiary-container);
           background-color: var(--md-sys-color-tertiary-container);
           text-transform: uppercase;
           translate: var(--_variant-translate-y, 0) 0;
           transition: translate 200ms var(--_easing-card-bounce);
+          text-shadow: 0 0 2px
+            color-mix(
+              in srgb,
+              var(--md-sys-color-on-tertiary-container),
+              transparent 60%
+            );
 
           &[data-type="sweet"] {
             color: var(--md-sys-color--on-secondary-container);
@@ -165,7 +171,7 @@ import {
       }
     }
   `,
-    changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CartItemComponent {
   item = input.required<CartItem>();
